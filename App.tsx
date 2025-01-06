@@ -7,7 +7,6 @@ import {
   useFonts,
 } from '@expo-google-fonts/roboto'
 import { Groups } from '@screens/Groups/Groups'
-import { StatusBar } from 'expo-status-bar'
 import theme from './src/theme'
 
 export default function App() {
@@ -15,7 +14,6 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar />
       {fontsLoaded ? <Groups /> : <ActivityIndicator />}
     </ThemeProvider>
   )
