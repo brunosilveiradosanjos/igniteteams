@@ -6,7 +6,7 @@ import {
   Roboto_700Bold,
   useFonts,
 } from '@expo-google-fonts/roboto'
-import { Groups } from '@screens/Groups/Groups'
+import { NewGroup } from '@screens/NewGroup/NewGroup'
 import theme from './src/theme'
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {fontsLoaded ? <Groups /> : <ActivityIndicator />}
+      {fontsLoaded ? <NewGroup /> : <ActivityIndicator />}
     </ThemeProvider>
   )
 }

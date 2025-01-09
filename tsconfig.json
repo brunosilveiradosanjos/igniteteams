@@ -34,7 +34,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "App.tsx"],
   "exclude": [
     "node_modules",
     "babel.config.js",

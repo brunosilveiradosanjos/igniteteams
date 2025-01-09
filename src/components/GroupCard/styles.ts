@@ -1,6 +1,6 @@
 import { UsersThree } from 'phosphor-react-native'
 import { TouchableOpacity } from 'react-native'
-import styled from 'styled-components/native'
+import styled, { css } from 'styled-components/native'
 
 // styled() is used to create a styled version of TouchableOpacity
 // This allows us to add custom styles to the TouchableOpacity component
@@ -19,9 +19,11 @@ export const Container = styled(TouchableOpacity)`
 `
 
 export const Title = styled.Text`
-  font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
-  color: ${({ theme }) => theme.COLORS.GRAY_200};
-  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    color: ${theme.COLORS.GRAY_200};
+    font-family: ${theme.FONT_FAMILY.REGULAR};
+  `}
 `
 
 // attrs() lets us set default props for the component
