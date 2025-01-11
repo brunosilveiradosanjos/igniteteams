@@ -1,12 +1,12 @@
 import { ActivityIndicator } from 'react-native'
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components/native'
 import {
   Roboto_400Regular,
   Roboto_700Bold,
   useFonts,
 } from '@expo-google-fonts/roboto'
-import { NewGroup } from '@screens/NewGroup/NewGroup'
+import { Players } from '@screens/Players/Players'
 import theme from './src/theme'
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {fontsLoaded ? <NewGroup /> : <ActivityIndicator />}
+      {fontsLoaded ? <Players /> : <ActivityIndicator />}
     </ThemeProvider>
   )
 }
