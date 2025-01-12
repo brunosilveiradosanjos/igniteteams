@@ -1,20 +1,29 @@
-import { ActivityIndicator } from 'react-native'
-import React from 'react'
+import { StatusBar } from 'react-native'
 import { ThemeProvider } from 'styled-components/native'
 import {
+  useFonts,
   Roboto_400Regular,
   Roboto_700Bold,
-  useFonts,
 } from '@expo-google-fonts/roboto'
-import { Players } from '@screens/Players/Players'
+
 import theme from './src/theme'
+
+import { Routes } from './src/routes'
+import { Loading } from '@components/Loading/Loading'
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold })
 
   return (
     <ThemeProvider theme={theme}>
-      {fontsLoaded ? <Players /> : <ActivityIndicator />}
+      <>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
+        {fontsLoaded ? <Routes /> : <Loading />}
+      </>
     </ThemeProvider>
   )
 }

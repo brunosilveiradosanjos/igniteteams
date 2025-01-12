@@ -1,15 +1,23 @@
 import React, { useState } from 'react'
 import { FlatList } from 'react-native'
-import { Container } from './styles'
+import { useNavigation } from '@react-navigation/native'
+
 import { Header } from '@components/Header/Header'
 import { Highlight } from '@components/Highlight/Highlight'
 import { GroupCard } from '@components/GroupCard/GroupCard'
 import { ListEmpty } from '@components/ListEmpty/ListEmpty'
 import { Button } from '@components/Button/Button'
 
+import { Container } from './styles'
+
 export function Groups() {
   const [groups, setGroups] = useState<Array<string>>([])
 
+  const navigation = useNavigation()
+
+  function handleNewGroup() {
+    navigation.navigate('new')
+  }
   return (
     <Container>
       <Header />
@@ -23,7 +31,7 @@ export function Groups() {
           <ListEmpty message="How about registering a class?" />
         )}
       />
-      <Button title="Register Class" />
+      <Button title="Register Class" onPress={handleNewGroup} />
     </Container>
   )
 }

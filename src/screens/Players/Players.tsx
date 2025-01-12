@@ -11,27 +11,24 @@ import { ListEmpty } from '@components/ListEmpty/ListEmpty'
 
 import { Container, Form, HeaderList, NumbersOfPlayers } from './styles'
 import { Button } from '@components/Button/Button'
+import { useRoute, RouteProp } from '@react-navigation/native'
+
+type RouteParams = {
+  group: string
+}
 
 export function Players() {
-  const [team, setTeam] = useState('')
-  const [players, setPlayers] = useState([
-    'Bruno',
-    'Lucas',
-    'Rafael',
-    'Gabriel',
-    'João',
-    'Pedro',
-    'Matheus',
-    'Felipe',
-    'Guilherme',
-  ])
-  // const [players, setPlayers] = useState([])
+  const [team, setTeam] = useState('Team A')
+  const [players, setPlayers] = useState([])
+
+  const route = useRoute()
+  const { group } = route.params as RouteParams
 
   return (
     <Container>
       <Header showBackButton />
       <Highlight
-        title="Class Name"
+        title={group}
         subtitle="Add your friends and divide into teams"
       />
       <Form>
